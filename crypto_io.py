@@ -3,19 +3,13 @@ import os, io
 # uncomment the 3 lines below and replace the names of your files (do not include .py) and function defs
 # leave "as name" as-is; this renames your functions so they are all compatible with this program,
 # regardless of what you named them
-from shift_cypher_kait import shift_cypher as shift_cypher
-from block_cypher_gameplan_ver import pad_message as block_pad, rebuild_message as block_rebuild
-from block_cypher_gameplan_ver import apply_shift as block_shift, undo_shift as block_unshift
-from diff_hell_gameplan import find_shared_key as dh_shared_key, apply_shift as dh_shift, remove_shift as dh_unshift
-
-# from YOUR_SHIFT_CYPHER_FILE import YOUR_SHIFT_DEF as shift_cypher
-# from YOUR_BLOCK_CYPHER_FILE import YOUR_PAD_MSG as block_pad, YOUR_REBUILD_MSG as block_rebuild
-# from YOUR_BLOCK_CYPHER_FILE import YOUR_APPLY_SHIFT as block_shift, YOUR_UNDO_SHIFT as block_unshift
-# from YOUR_DIFF_HELL_FILE import find_shared_key as dh_shared_key, apply_shift as dh_shift, remove_shift as dh_unshift
+from YOUR_SHIFT_CYPHER_FILE import YOUR_SHIFT_DEF as shift_cypher
+from YOUR_BLOCK_CYPHER_FILE import YOUR_PAD_MSG as block_pad, YOUR_REBUILD_MSG as block_rebuild
+from YOUR_BLOCK_CYPHER_FILE import YOUR_APPLY_SHIFT as block_shift, YOUR_UNDO_SHIFT as block_unshift
+from YOUR_DIFF_HELL_FILE import find_shared_key as dh_shared_key, apply_shift as dh_shift, remove_shift as dh_unshift
 
 # here I set the private key used in Diffie-Hellman encryptions. Feel free to change it.
 # the public_base is set to 8 and public_modulus 29, as on GamePlan. You can change those too.
-# If you do, also change them on line 78 and 116 (would be easier w/ a named variable...).
 dh_base = 8
 dh_mod = 29
 dh_private_key = 49
