@@ -25,7 +25,13 @@ def main():
     # infinite loop runs until the user quits
     while True:
         print() # newline for readability
-        choice = int(input("Type 1 to encrypt, 2 to decrypt, or 0 to quit: "))
+        choice = input("Type 1 to encrypt, 2 to decrypt, or 0 to quit: ")
+        
+        try: 
+            choice = int(choice)
+        except: 
+            print("Sorry, that is not a valid choice.")
+            continue
 
         if choice == 1:
             encrypt()
@@ -47,10 +53,8 @@ def encrypt():
         file_name = input("Please enter your message's name: ").strip()
         if "{}.txt".format(file_name) in os.listdir("msgs"):
             print("Sorry, there is already a secret message with that name. Choose another.")
-        else:
-            break
-
-    while True:
+            continue
+        
         cypher = input(
             "1   : Ceaser (shift) Cypher\n2   : Block Cypher\n3   : Diffie-Hellman Cypher\nPlease select a cypher (1, 2, or 3): ")
 
