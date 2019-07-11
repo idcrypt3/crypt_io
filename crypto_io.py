@@ -45,7 +45,7 @@ def encrypt():
 
     while True:
         file_name = input("Please enter your message's name: ").strip()
-        if "{}".format(file_name) in os.listdir("msgs"):
+        if "{}.txt".format(file_name) in os.listdir("msgs"):
             print("Sorry, there is already a secret message with that name. Choose another.")
         else:
             break
@@ -58,6 +58,7 @@ def encrypt():
             cypher = int(cypher)
         except ValueError:
             print("Sorry, {} is not a valid choice. Pick 1, 2, or 3.".format(cypher))
+            continue
 
         if cypher == 1:
             encrypted = shift_cypher(data[0], data[1])
@@ -96,6 +97,7 @@ def decrypt():
             cypher = int(cypher)
         except ValueError:
             print("Sorry, {} is not a valid choice. Pick 1, 2, or 3.".format(cypher))
+            continue
 
         if cypher == 1:
             decrypted = shift_cypher(data[0], -data[1])
